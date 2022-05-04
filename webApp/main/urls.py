@@ -5,6 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('about', views.about)
-] 
-# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('test', views.test)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
