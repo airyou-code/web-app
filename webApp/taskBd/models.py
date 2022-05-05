@@ -14,4 +14,4 @@ class taskiq(models.Model):
     answer6 = models.CharField('answer6', max_length=20)
 
     def __str__(self):
-        return f'New: {self.question}'
+        return self.question
