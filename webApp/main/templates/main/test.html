@@ -15,7 +15,14 @@
             </div>
             <div class="col-lg-6 col-12">
                 <div class="row">
-                    <div class="col-4">
+                    {% for i in 6|get_range %}
+                        <div class="col-4">
+                            <div class="cell">
+                                <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!-- <div class="col-4">
                         <div class="cell">
                             <img src="{% static 'main/14_6_0.png' %}" alt="140">
                         </div>
@@ -44,11 +51,14 @@
                         <div class="cell">
                             <img src="{% static 'main/14_6_0.png' %}" alt="140">
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
-            <div class="col-2" style="margin-left: 20px; margin-top: 10px;">Back</div>
+            <div class="col-2" style="margin-left: 20px; margin-top: 10px;">
+               id: {{ task1 }}
+            
+            </div>
 
 
         </div>
