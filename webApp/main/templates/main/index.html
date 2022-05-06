@@ -8,7 +8,14 @@
         <div class="row">
             <div class="col-lg-7 col-12" style="background-color: rgb(255, 255, 255)"> Пройти тест </div>
             <div class="col-lg-5 col-12" >
-                <div style="background-color: rgb(255, 255, 255)">Top IQ: {{ task1 }}</div>
+                <div style="background-color: rgb(255, 255, 255)">
+                    Top IQ: {{ task1.0 }}
+                    <!-- {% for i in task1 %}
+                        <div>
+                            <h3> {{ i }} </h3>
+                        </div>
+                    {% endfor %} -->
+                </div>
             </div>
         </div>
     </div>

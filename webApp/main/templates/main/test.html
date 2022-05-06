@@ -10,53 +10,50 @@
         <div class="row">
             <div class="col-lg-6 col-12" style="margin-bottom: 10px;">
                 <div class="qcell">
-                    <img src="{% static 'main/14_0_0.png' %}" class="" alt="140">
+                    <img src="{{task1.1.question}}" class="" alt="140">
                 </div>
             </div>
+
             <div class="col-lg-6 col-12">
                 <div class="row">
-                    {% for i in 6|get_range %}
-                        <div class="col-4">
-                            <div class="cell">
-                                <img src="{% static 'main/14_6_0.png' %}" alt="140">
-                            </div>
-                        </div>
-                    {% endfor %}
-                    <!-- <div class="col-4">
+
+                    <div class="col-4">
                         <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            <img src="{{task1.1.answer1}}" alt="140">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <div class="cell">
+                            <img src="{{task1.1.answer2}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            <img src="{{task1.1.answer3}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            <img src="{{task1.1.answer4}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            <img src="{{task1.1.answer5}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
+                            <img src="{{task1.1.answer6}}" alt="140">
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="cell">
-                            <img src="{% static 'main/14_6_0.png' %}" alt="140">
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
 
             <div class="col-2" style="margin-left: 20px; margin-top: 10px;">
-               id: {{ task1 }}
+               id: {{ task1.1 }}
             
             </div>
 
