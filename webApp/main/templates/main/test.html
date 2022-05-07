@@ -8,28 +8,17 @@
     <div class="col-lg-10 col-12" style="background-color: aliceblue;">
         <div class="col-3">Вопрос {{ test.id }} / 40</div>
             <script>
-                function next()
-                {
-                    var link = "{% url 'iqtest' 0 %}";
-                    link = link.substring(0, link.length - 1);
-                    idTask = Number('{{ test.id }}') + 1;
-                    return location.href = link + idTask;
-                }
 
-                function previous()
-                {
-                    var link = "{% url 'iqtest' 0 %}";
-                    link = link.substring(0, link.length - 1);
-                    idTask = Number('{{ test.id }}') - 1;
-                    return location.href = link + idTask;
-                }
             </script>
 
         <div class="row">
             <div class="col-lg-6 col-12" style="margin-bottom: 10px;">
                 <div class="qcell">
-                    <!-- <img src="{{task1.1.question}}" id="image" alt="140" onclick="next()"> -->
-                    <img src="{{test.question}} " id="image" alt="140" onclick="next()">
+                    <a href="{{test.id}}">
+                        <img src="{{test.question}}" id="image" alt="140" >
+
+                    </a>
+                    <!-- <img src="{{test.question}} " id="image" alt="140" onclick="next()"> -->
 
                 </div>
             </div>
