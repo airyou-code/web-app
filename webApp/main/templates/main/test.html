@@ -6,55 +6,75 @@
 <div class="row">
     <div class="col-lg-1 col-0"></div>
     <div class="col-lg-10 col-12" style="background-color: aliceblue;">
-        <div class="col-3">Вопрос 14 / 40</div>
+        <div class="col-3">Вопрос {{ test.id }} / 40</div>
+            <script>
+                function next()
+                {
+                    var link = "{% url 'iqtest' 0 %}";
+                    link = link.substring(0, link.length - 1);
+                    idTask = Number('{{ test.id }}') + 1;
+                    return location.href = link + idTask;
+                }
+
+                function previous()
+                {
+                    var link = "{% url 'iqtest' 0 %}";
+                    link = link.substring(0, link.length - 1);
+                    idTask = Number('{{ test.id }}') - 1;
+                    return location.href = link + idTask;
+                }
+            </script>
+
         <div class="row">
             <div class="col-lg-6 col-12" style="margin-bottom: 10px;">
                 <div class="qcell">
-                    <img src="{{task1.1.question}}" class="" alt="140">
+                    <!-- <img src="{{task1.1.question}}" id="image" alt="140" onclick="next()"> -->
+                    <img src="{{test.question}} " id="image" alt="140" onclick="next()">
+
                 </div>
             </div>
+
 
             <div class="col-lg-6 col-12">
                 <div class="row">
 
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer1}}" alt="140">
+                            <img src="{{test.answer1}}" alt="140">
                         </div>
                     </div>
 
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer2}}" alt="140">
+                            <img src="{{test.answer2}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer3}}" alt="140">
+                            <img src="{{test.answer3}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer4}}" alt="140">
+                            <img src="{{test.answer4}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer5}}" alt="140">
+                            <img src="{{test.answer5}}" alt="140">
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="cell">
-                            <img src="{{task1.1.answer6}}" alt="140">
+                            <img src="{{test.answer6}}" alt="140">
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            <div class="col-2" style="margin-left: 20px; margin-top: 10px;">
-               id: {{ task1.1 }}
-            
+            <div class="col-2" style="margin-left: 20px; margin-top: 10px;" onclick="previous()">
+               <h3>Back</h3>
             </div>
 
 
