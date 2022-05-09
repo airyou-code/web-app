@@ -7,7 +7,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    # path('', views.index),
-    # path('test/', include('taskBd.urls'))
-    path('',include('taskBd.urls'))
+    path('', views.index),
+    path('test/', include('taskBd.urls')),
+    # path('',include('taskBd.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
