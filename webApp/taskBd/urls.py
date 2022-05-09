@@ -7,7 +7,7 @@ from . import views
 
 urlpatterns = [
     path('', views.First),
-    path('<int:pk>', views.СhangingTest.as_view(), name='iqtest'),
-    # path('test/<int:pk>', views.test),
+    # path('<int:pk>', views.СhangingTest.as_view(), name='iqtest'),
+    path('<int:pk>', views.edit, name='iqtest'),
     # path('test/', views.test)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
