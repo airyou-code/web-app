@@ -57,9 +57,18 @@ function previous() {
     // return location.href = link + idTask;
 }
 
+function send_test(){
+    console.log("lol");
+}
+
 function check_select() {
     list_answer = getCookie('ask_list');
     if (Number(getCookie('ask')) >= 0){
         document.getElementById(list_answer.charAt(Number(getCookie('ask')))).className = "select";
+    }
+    if (Number(getCookie('ask')) >= 9) {
+        var button = document.getElementById("next_b");
+        button.onclick = send_test;
+        document.getElementById("next").innerHTML = "SEND TEST";
     }
 }
