@@ -9,5 +9,6 @@ from . import views
 urlpatterns = [
     path('', views.index),
     path('test/', include('taskBd.urls')),
+    path('result/', views.result)
     # path('',include('taskBd.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

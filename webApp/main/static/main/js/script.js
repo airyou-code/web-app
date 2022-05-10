@@ -58,7 +58,7 @@ function previous() {
 }
 
 function send_test(){
-    console.log("lol");
+    return location.href = "/result";
 }
 
 function check_select() {
