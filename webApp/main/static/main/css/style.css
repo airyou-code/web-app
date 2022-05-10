@@ -2,7 +2,8 @@
      /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite; */
-    height: 100vh; 
+    height: 100vh;
+    width: 100vw; 
     background: linear-gradient(to top right, #252b58, #2d9789);
 }
 
@@ -20,13 +21,15 @@
 
 .cell {
     /* padding: 10px; */
-    height: 155px;
-    
+    /* height: 155px; */
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
     max-width: 155px;
     max-height: 155px;
     background-color: #ececee;
     border-radius: 10px;
+    align-items: center;
     /* margin-left: 10px; */
     /* border-color: #ff8049; */
     /* border-style: solid; */
@@ -35,21 +38,27 @@
 }
 
 .select{
-    height: 155px;
+    /* height: 155px; */
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
     max-width: 155px;
     max-height: 155px;
     background-color: #ececee;
     border-radius: 10px;
+    align-items: center;
+
     border-color: #ff8049;
     border-style: solid;
 }
 
 .qcell {
-    padding: 10px;
+    /* padding: 10px; */
     margin-left: auto;
     margin-right: auto;
-    width: 470px;
+    /* width: 470px; */
+    max-height: 316px;
+    max-width: 480px;
     background-color: #ececee;
     border-radius: 10px;
     padding-bottom: 10px;

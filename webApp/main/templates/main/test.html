@@ -4,64 +4,10 @@
 {% block content %}
 
 <div class="row">
-    <script>
-        function getCookie(name, json = false) {
-            if (!name) {
-                return undefined;
-            }
-            /*
-            Returns cookie with specified name (str) if exists, else - undefined
-            if returning value is JSON and json parameter is true, returns json, otherwise str
-            */
-            let matches = document.cookie.match(new RegExp(
-                "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\\\/+^])/g, '\\$1') + "=([^;]*)"
-            ));
-            if (matches) {
-                let res = decodeURIComponent(matches[1]);
-                if (json) {
-                    try {
-                        return JSON.parse(res);
-                    }
-                    catch (e) { }
-                }
-                return res;
-            }
-
-            return undefined;
-        }
-        function next() {
-            // var link = "{% url 'iqtest' 0 %}";
-            // link = link.substring(0, link.length - 1);
-            // idTask = Number('{{ test.id }}') + 1;
-            // deleteCooki('ask');
-            a = Number(getCookie('ask')) + 1;
-            document.cookie = "ask="+a + "; path=/";
-            return location.href = "/test";
-        }
-
-        function select(id_select) {
-            console.log(id_select)
-            var link = "{% url 'iqtest' 0 %}";
-            link = link.substring(0, link.length - 1);
-            idTask = Number('{{ test.id }}') + 1;
-            return location.href = link + idTask;
-        }
-
-        function previous() {
-            id_ask = Number(getCookie('ask')) - 1;
-            if (id_ask < 0){id_ask=0};
-            document.cookie = "ask=" + id_ask + "; path=/";
-            return location.href = "/test";
-            // var link = "{% url 'iqtest' 0 %}";
-            // link = link.substring(0, link.length - 1);
-            // idTask = Number('{{ test.id }}') - 1;
-            // return location.href = link + idTask;
-        }
-    </script>
 
     <div class="col-lg-1 col-0"></div>
     <div class="col-lg-10 col-12" style="background-color: rgba(221, 221, 221, 0.473);border-radius: 20px; ">
-        <div class="col-3">
+        <div class="col-6">
             <h3 style="color: rgb(255, 255, 255);">Question {{ test.id }} / 40</h3>
             
         </div>
@@ -69,63 +15,64 @@
         <div class="row">
             <div class="col-lg-6 col-12" style="margin-bottom: 10px;">
                 <div class="qcell">
-                    <img src="{{test.question}} " id="image" alt="140" onclick="next()">
+                    <img src="{{test.question}} " id="image" alt="140" style="height: 100%; width: 100%;" onclick="next()">
 
                 </div>
             </div>
 
 
             <div class="col-lg-6 col-12">
-                <div class="row">
+                <div class="row justify-content-center">
 
                     <div class="col-4">
-                        <div class="cell" onclick="select(1)">
-                            <img src="{{test.answer1}}" alt="140" >
+                        <div class="cell" onclick="select(1)" onload="check_select()" id="1">
+                            <img src="{{test.answer1}}" style="height: 100%; width: 100%;" alt="1" >
                         </div>
                     </div>
 
                     <div class="col-4">
-                        <div class="cell" onclick="select(2)">
-                            <img src="{{test.answer2}}" alt="140">
+                        <div class="cell" onclick="select(2)" onload="check_select()" id="2">
+                            <img src="{{test.answer2}}" style="height: 100%; width: 100%;" alt="2">
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="cell" onclick="select(3)">
-                            <img src="{{test.answer3}}" alt="140">
+                        <div class="cell" onclick="select(3)" onload="check_select()" id="3">
+                            <img src="{{test.answer3}}" style="height: 100%; width: 100%;" alt="3">
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="cell" onclick="select(4)">
-                            <img src="{{test.answer4}}" alt="140">
+                        <div class="cell" onclick="select(4)" onload="check_select()" id="4">
+                            <img src="{{test.answer4}}" style="height: 100%; width: 100%;" alt="4">
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="cell" onclick="select(5)">
-                            <img src="{{test.answer5}}" alt="140">
+                        <div class="cell" onclick="select(5)" onload="check_select()" id="5">
+                            <img src="{{test.answer5}}" style="height: 100%; width: 100%;" alt="5">
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="cell" onclick="select(6)">
-                            <img src="{{test.answer6}}" alt="140">
+                        <div class="cell" onclick="select(6)" onload="check_select()" id="6">
+                            <img src="{{test.answer6}}" style="height: 100%; width: 100%;" alt="6">
                         </div>
                     </div>
 
                 </div>
             </div>
-
-            
-            
         </div>
 
-        <div class="row" style="margin-top: 10px;">      
-            <div class="col-lg-3 col-5" style="margin-left: 20px; background-color: #ff8049; border-radius: 10px; text-align: center; margin-bottom: 20px;" onclick="previous()">
-               <h3 style="color: rgb(255, 255, 255);">Back</h3>
+        <div class="row">      
+            <div class="col-lg-4 col-5">
+                <div style="margin-left: 20px; background-color: #ff8049; border-radius: 10px; text-align: center; margin-bottom: 20px; height: 90%;" onclick="previous()">
+                    <h3 style="color: rgb(255, 255, 255); padding-top: 10px;">Back</h3>
+                </div>
             </div>
 
-            <div class="col-lg-5 col-0"></div>
+            <div class="col-lg-4 col-1"></div>
 
-            <div class="col-lg-3 col-5" style="margin-left: 20px; background-color: #ff8049; border-radius: 10px; text-align: center; margin-bottom: 20px;" onclick="next()">
-                <h3 style="color: rgb(255, 255, 255);">Next</h3>
+            <div class="col-lg-4 col-5" >
+                <div style="margin-left: 20px; background-color: #ff8049; border-radius: 10px; text-align: center; margin-bottom: 20px; height: 90%;" onclick="next()">
+                    <h3 style="color: rgb(255, 255, 255); padding-top: 10px;">Next</h3>
+                </div>
             </div>
         </div>
 

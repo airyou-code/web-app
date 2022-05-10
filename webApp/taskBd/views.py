@@ -9,7 +9,7 @@ from django.http import HttpResponseNotFound
 from django.http import HttpResponseRedirect
 
 def First(request):
-    if 'ask' in request.COOKIES:
+    if 'ask' in request.COOKIES and 'ask_list' in request.COOKIES:
         id_ask=int(request.COOKIES['ask'])
         while 1:
             try:
@@ -27,6 +27,8 @@ def First(request):
         test = taskiq.objects.all()
         response = render(request, 'main/test.html', {'test': test[0]})
         response.set_cookie('ask', 0)
+        list_answer = "0000000000"
+        response.set_cookie('ask_list', list_answer)
         return response
 
     print(request)
