@@ -71,4 +71,11 @@ function check_select() {
         button.onclick = send_test;
         document.getElementById("next").innerHTML = "SEND TEST";
     }
+
+}
+
+function show_result() {
+    result = getCookie('result');
+    
+
 }

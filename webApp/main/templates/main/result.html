@@ -1,17 +1,23 @@
+
 {% extends 'main/layout.html' %}
 {% load static %}
 
 {% block content %}
 
-<div class="row">
+<div class="row" >
     <div class="col-1"></div>
     <div class="col-6">
         <div style=" color: rgb(255, 255, 255); border-radius: 20px; text-align: center; height: 500px;">
             <h3 style="padding-top: 20px;  color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif;">You have successfully completed the test. Congratulations!</h3>
+            <h2 style="padding-top: 20px;  color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif;">Your result</h2>
+            <div onclick="">
+                <h3>Take result</h3>
+            </div>
+            <h1 id="res"></h1>
         </div>
     </div>
     <div class="col-4">
-        
+       
     </div>
     <div class="col-1"></div>
 </div>
