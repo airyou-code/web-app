@@ -76,6 +76,8 @@ function check_select() {
 
 function show_result() {
     result = getCookie('result');
+    document.getElementById("res").innerHTML = result;
+    document.getElementById("res_b").innerHTML = "";
     
 
 }
